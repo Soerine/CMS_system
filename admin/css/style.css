@@ -30,16 +30,17 @@ section#content{
 /* header på publicsiden */
 #adminheader{
     width: 100%;
-    height: 40px;
-    background: black;
+    height: 80px;
+    background:  #F6CECE;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /* Logo */
-#logo {
+#logo img{
     /*background: white;*/
-    display: inline-block;
-	height:100%;
+    width:8%;
+	height:auto;
     float: left;
+    margin-top:-1rem;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #title{
