@@ -1,0 +1,26 @@
+{
+  "name": "wi73-cms",
+  "version": "1.0.0",
+  "description": "<a name=\"top\"></top> # CMS bygget med Node.js ### Jeg vil her vise hvordan man kan opbygge et meget simpelt CMS site, programmeret i Node.js. Lad mig straks påpege, at koden først og fremmest er skrevet til undervisningsbrug, og udgør ikke et produktionsklart system.",
+  "main": "server.js",
+  "dependencies": {
+    "multiparty": "^4.2.1",
+    "mysql2": "^1.6.4",
+    "nodemon": "^1.18.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "psl@rts.dk",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Soerine/CMS_system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Soerine/CMS_system/issues"
+  },
+  "homepage": "https://github.com/Soerine/CMS_system#readme"
+}
