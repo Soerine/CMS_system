@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <title>Admin</title>
     <style>
         #loginform{
             width: 300px;
             margin: 50px auto 50px auto;
             padding: 50px;
-            border: thin solid red;
+            border: thin solid black;
+            text-align: center;
         }
         #loginform .inputElements{
             display: block;
@@ -17,27 +22,35 @@
         }
         .msg {
             text-align:center;
-            color:red
+            color:black;
         }
         h4 {
             text-align:center;
+            font-family: 'Poiret One', cursive;
+            letter-spacing: 2px;
+            font-weight: 700;
         }
+
     </style>
 </head>
+
 <body>
     <main>
         <!-- Da jeg bruger modulet 'multiparty' til at tage imod de afsendte form-data
              er det vigtigt at formens enctype er "multipart/form-data", ellers virker
              det ikke. -->
+
         <form id="loginform" method="post" action="/login" enctype="multipart/form-data">
-                <h4>Login påkrævet</h4>
-                
-                
-                <!--msg-->
-                <input class="inputElements" type="text" name="username" placeholder="Brugernavn" autofocus value="admin">
-                <input class="inputElements" type="password" name="password" placeholder="Kodeord" value="admin">
-                <button class="inputElements" type="submit">Login</button>
+            <i class="fa fa-user-circle" style="font-size:15rem;"></i>
+            <h4>LOGIN REQUIRED</h4>
+
+
+            <!--msg-->
+            <input class="inputElements" type="text" name="username" placeholder="Brugernavn" autofocus value="admin">
+            <input class="inputElements" type="password" name="password" placeholder="Kodeord" value="admin">
+            <button class="inputElements" type="submit">Login</button>
         </form>
     </main>
 </body>
+
 </html>

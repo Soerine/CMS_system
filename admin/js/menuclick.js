@@ -1,5 +1,5 @@
 (function () {
-    
+
     document.addEventListener("click", menuclick, true);    // Først en eventlistener der 'fanger' alle museklik på siden
 
     function menuclick(e) {
@@ -28,37 +28,37 @@
             case 'catAdd':  // OK
                 catAdd(caller);
                 break;
-            case 'catDelete' :   // OK
+            case 'catDelete':   // OK
                 catDelete(caller)
                 break;
-            case 'article' :    // OK
+            case 'article':    // OK
                 article(caller);
                 break
-            case 'edit' :   // OK
+            case 'edit':   // OK
                 edit();
                 break;
-            case 'articleAdd' : // OK
+            case 'articleAdd': // OK
                 articleAdd(caller);
                 break;
-            case 'articleDelete' :  // OK
+            case 'articleDelete':  // OK
                 articleDelete(caller);
                 break;
-            case 'articleEdit' :
+            case 'articleEdit':
                 articleEdit(caller);
                 break;
-            case 'articleUpdate' :
+            case 'articleUpdate':
                 articleUpdate(caller);
                 break;
             case 'users':   // OK
                 users(caller);
                 break;
-            case 'userAdd' :    // OK
+            case 'userAdd':    // OK
                 userAdd(caller);
                 break;
-            case 'userDelete' :     // OK
+            case 'userDelete':     // OK
                 userDelete(caller);
                 break;
-            case 'userEdit' :   // OK
+            case 'userEdit':   // OK
                 userEdit(caller);
                 break;
             default:
@@ -68,11 +68,11 @@
 
     //
 
- 
+
     function logout() {
         fetch('/logout', { credentials: 'include', method: 'delete' })
             .then(function () {
-                document.querySelector("#title").innerHTML = 'Du loggede af...';
+                document.querySelector("#title").innerHTML = 'You are signing out...';
                 setTimeout(function () { location.href = "/"; }, 1000);
             });
     }

@@ -5,11 +5,11 @@ function categories() {
         })
         .then(function (jsonData) {
             var content = `
-                        <div class="tbl-container"><div class="tbl-head">Rediger menu</div>
+                        <div class="tbl-container"><div class="tbl-head">EDIT MENU</div>
                             <form>
                                 <div class="tbl-row">
-                                    <div class="tbl-cell"><input class="center" readonly type="text" value="Navn"></div>
-                                    <div class="tbl-cell"><input class="center" readonly type="text" value="Position"></div>
+                                    <div class="tbl-cell"><input class="center" readonly type="text" value="NAME"></div>
+                                    <div class="tbl-cell"><input class="center" readonly type="text" value="POSITION"></div>
                                 </div>
                             </form>`;
             jsonData.forEach(function (d) {
@@ -31,13 +31,13 @@ function categories() {
                                 </div>
                             </form>`;
             });
-            content += `<br><hr>Eller tilføj<form id="frmCatAdd">
+            content += `<br><hr>OR ADD...<form id="frmCatAdd"><br>
                             <div class="tbl-row">
                                 <div class="tbl-cell">
-                                    <input name="catname" type="text" placeholder="Menunavn">
+                                    <input name="catname" type="text" placeholder="MENUNAME">
                                 </div>
                                 <div class="tbl-cell">
-                                    <input name="catpos" type="number" placeholder="position">
+                                    <input name="catpos" type="number" placeholder="POSITION">
                                 </div>
                                 <div class="tbl-cell">
                                     <img data-cmd="catAdd"  class="iconImage clickable" src="img/plus-2x.png" title="Opdater">
@@ -52,9 +52,9 @@ function categories() {
         .catch(function (err) {
             console.log(err);
         })
-}    
+}
 
-function catAdd(caller){
+function catAdd(caller) {
     var form = document.querySelector('#frmCatAdd');
     var formData = new FormData(form);
     fetch('/menuitems', {
@@ -62,19 +62,19 @@ function catAdd(caller){
         method: 'post',
         body: formData
     })
-        .then(function(serverResponse){
-            if(serverResponse.redirected){
+        .then(function (serverResponse) {
+            if (serverResponse.redirected) {
                 // Hvis response objectets 'redirected' er true...
                 location = serverResponse.url; // ...så send browseren til redirected url'en...
-            }                                    
+            }
             document.querySelector('div[data-cmd="categories"]').click();
         })
-        .catch(function(err){
+        .catch(function (err) {
             console.log(err)
         })
 }
- 
-function catDelete(caller){
+
+function catDelete(caller) {
     var formId = caller.dataset.id
     var frm = document.querySelector(`#${formId}`);
     var frmData = new FormData(frm);
@@ -83,26 +83,26 @@ function catDelete(caller){
         method: 'delete',
         body: frmData
     })
-    .then(function (serverResponse) {
-        if(serverResponse.redirected){
-            // Hvis response objectets 'redirected' er true...
-            location = serverResponse.url; // ...så send browseren til redirected url'en...
-        }                                
-        document.querySelector('div[data-cmd="categories"]').click();
-    });
+        .then(function (serverResponse) {
+            if (serverResponse.redirected) {
+                // Hvis response objectets 'redirected' er true...
+                location = serverResponse.url; // ...så send browseren til redirected url'en...
+            }
+            document.querySelector('div[data-cmd="categories"]').click();
+        });
 
     // });
 }
 
-function catEdit(caller) { 
+function catEdit(caller) {
     var formId = caller.dataset.id
     var frm = document.querySelector(`#${formId}`);
     var frmData = new FormData(frm);
-    if(frmData.get('catname').trim().length < 1){
+    if (frmData.get('catname').trim().length < 1) {
         alert('Kategorinavnet skal angives');
         return;
     }
-    if(frmData.get('catpos').trim().length < 1){
+    if (frmData.get('catpos').trim().length < 1) {
         alert('Positionen skal angives');
         return;
     }
@@ -112,10 +112,10 @@ function catEdit(caller) {
         body: frmData
     })
         .then(function (serverResponse) {
-            if(serverResponse.redirected){
+            if (serverResponse.redirected) {
                 // Hvis response objectets 'redirected' er true...
                 location = serverResponse.url; // ...så send browseren til redirected url'en...
-            }                                    
+            }
             document.querySelector('div[data-cmd="categories"]').click();
         })
 }

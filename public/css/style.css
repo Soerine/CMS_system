@@ -8,6 +8,29 @@ html, body{
     left: 0;
 }* {box-sizing: border-box;}
 
+.login_f{
+    float:right;
+    margin-right:1rem;
+    margin-top:-4.5rem;
+    /* background-color:rgba(255, 255, 255, 0.726); */
+
+}
+.login_f a{
+    font-size:1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Poiret One', cursive;
+    color:black;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 3px rgb(255, 255, 255), 0 0 25px rgb(231, 110, 80), 0 0 10px rgb(247, 158, 100);
+   
+}
+
+.login_f a:hover{
+    font-size:1.6rem;
+
+   
+}
 .about img{
     display: block;
     margin:2rem auto;
@@ -197,7 +220,7 @@ main{
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .menuitem{
     /*display: inline;*/
-    padding: 2rem 5px;
+    padding: 2rem 0px;
     margin: 0 1rem;
     height: 100%;
     width: 20px !important;
